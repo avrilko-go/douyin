@@ -28,6 +28,7 @@ export class HashService {
             (A[c] ^= 1549556828), (s[c] ^= 909522486);
         // eslint-disable-next-line block-scoped-var
         (i.sigBytes = a.sigBytes = r), this.reset();
+        return this;
     }
 
     reset() {

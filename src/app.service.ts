@@ -63,19 +63,19 @@ export class AppService {
             ServiceId: 'jm8ajry58r',
             app_id: 2906,
             user_id: '',
-            s: '3n9mwwqweu6',
+            s: 'myakoda7lg',
         };
         this.token = {
-            accessKeyId: 'AKTPNWEzMWQ4NDU0ZWE4NDBiZDg1NjE3NTZlNWZhOGRkZjM',
-            secretAccessKey: 'NX24yJapd/J+o9NTE98z/IEL2EIEaiA/YcphHWEE/OlMAWpwVCLuBXcZLW8J/wVB',
+            accessKeyId: 'AKTPNDlmMWRjNDMxNTcxNDgxMDk3MWFkMWVhZmExNDQ5M2U',
+            secretAccessKey: 'lRkj6fyB6oBiFbp50JmJFtInrmwrrx1m9wJl2ug8HSMHR7Ih/owR9E1DaHx5lAj8',
             sessionToken:
-                'STS2eyJMVEFjY2Vzc0tleUlEIjoiQUtMVFlqZGpZVFV3WldRd1pEVTBORFJtTW1Fd05XVTVObUUxTVRkaVl6VXlaVGciLCJBY2Nlc3NLZXlJRCI6IkFLVFBOV0V6TVdRNE5EVTBaV0U0TkRCaVpEZzFOakUzTlRabE5XWmhPR1JrWmpNIiwiU2lnbmVkU2VjcmV0QWNjZXNzS2V5IjoiekVEUTI4RkhPemJWSndGa1FXSHEycTI4aUdURkxWTTdNQS81b0pWa3hMMHQvK2dVekY2QThsK0NTNkFLanBrcFlWZU5UUzF4TGlSaGlsbWh5eHRrMlZnN3ZSeEFyYmlaUjg2KzVZTldPRkk9IiwiRXhwaXJlZFRpbWUiOjE2Nzg0MzUwNDUsIlBvbGljeVN0cmluZyI6IntcIlN0YXRlbWVudFwiOlt7XCJFZmZlY3RcIjpcIkFsbG93XCIsXCJBY3Rpb25cIjpbXCJ2b2Q6KlwiLFwiSW1hZ2VYOipcIl0sXCJSZXNvdXJjZVwiOltcIipcIl19LHtcIkVmZmVjdFwiOlwiQWxsb3dcIixcIkFjdGlvblwiOltcIlVzZXJJZFwiXSxcIlJlc291cmNlXCI6W1wiMTAyODQyNjYwMDQ3XCJdfSx7XCJFZmZlY3RcIjpcIkFsbG93XCIsXCJBY3Rpb25cIjpbXCJBcHBJZFwiXSxcIlJlc291cmNlXCI6W1wiMTEyOFwiXX0se1wiRWZmZWN0XCI6XCJBbGxvd1wiLFwiQWN0aW9uXCI6W1wiVXNlclJlZmVyZW5jZVwiXSxcIlJlc291cmNlXCI6W1wie1xcXCJwc21cXFwiOlxcXCJkb3V5aW4uY3JlYXRvci5jb250ZW50XFxcIn1cIl19LHtcIkVmZmVjdFwiOlwiQWxsb3dcIixcIkFjdGlvblwiOltcIlNlc3Npb25DaGVja1wiXSxcIlJlc291cmNlXCI6W1wiVWlkXCJdfSx7XCJFZmZlY3RcIjpcIkFsbG93XCIsXCJBY3Rpb25cIjpbXCJQU01cIl0sXCJSZXNvdXJjZVwiOltcImRvdXlpbi5jcmVhdG9yLmNvbnRlbnRcIl19XX0iLCJTaWduYXR1cmUiOiI3M2M0YThiNGMxZTgyOTcyNDM2YTY0MTRmNDVhYTQ5MmMwODYyZDQyOTJmYzZhY2Q4ZGY3MDc3YjgwMzdmYzUxIn0=',
+                'STS2eyJMVEFjY2Vzc0tleUlEIjoiQUtMVFlqZGpZVFV3WldRd1pEVTBORFJtTW1Fd05XVTVObUUxTVRkaVl6VXlaVGciLCJBY2Nlc3NLZXlJRCI6IkFLVFBORGxtTVdSak5ETXhOVGN4TkRneE1EazNNV0ZrTVdWaFptRXhORFE1TTJVIiwiU2lnbmVkU2VjcmV0QWNjZXNzS2V5IjoiTlRsdS9SOFc2TUlETng1b1lvalkySlZRbUkvbmdmMEh6VVJseERiUG5pNnpvbi9TdzNZWUQ3Y0JubzdKZFhDcmNIM0lnelduTzhkc25iWnd4eEFzR1k3WlF0ZG9pdjF5ZG5saGhtV3lVeEk9IiwiRXhwaXJlZFRpbWUiOjE2Nzg0NDA1OTEsIlBvbGljeVN0cmluZyI6IntcIlN0YXRlbWVudFwiOlt7XCJFZmZlY3RcIjpcIkFsbG93XCIsXCJBY3Rpb25cIjpbXCJ2b2Q6KlwiLFwiSW1hZ2VYOipcIl0sXCJSZXNvdXJjZVwiOltcIipcIl19LHtcIkVmZmVjdFwiOlwiQWxsb3dcIixcIkFjdGlvblwiOltcIlVzZXJJZFwiXSxcIlJlc291cmNlXCI6W1wiMTAyODQyNjYwMDQ3XCJdfSx7XCJFZmZlY3RcIjpcIkFsbG93XCIsXCJBY3Rpb25cIjpbXCJBcHBJZFwiXSxcIlJlc291cmNlXCI6W1wiMTEyOFwiXX0se1wiRWZmZWN0XCI6XCJBbGxvd1wiLFwiQWN0aW9uXCI6W1wiVXNlclJlZmVyZW5jZVwiXSxcIlJlc291cmNlXCI6W1wie1xcXCJwc21cXFwiOlxcXCJkb3V5aW4uY3JlYXRvci5jb250ZW50XFxcIn1cIl19LHtcIkVmZmVjdFwiOlwiQWxsb3dcIixcIkFjdGlvblwiOltcIlNlc3Npb25DaGVja1wiXSxcIlJlc291cmNlXCI6W1wiVWlkXCJdfSx7XCJFZmZlY3RcIjpcIkFsbG93XCIsXCJBY3Rpb25cIjpbXCJQU01cIl0sXCJSZXNvdXJjZVwiOltcImRvdXlpbi5jcmVhdG9yLmNvbnRlbnRcIl19XX0iLCJTaWduYXR1cmUiOiI0M2M4NTU1ODhhZTc2N2JlZDNlM2UxZTVhNjA2OWMyYzA5YjllNzUzZjliMjAxMGY3ZGNhMmE1MTM0MWI0YzJiIn0=',
         };
 
-        this.addAuthorization(new Date('Wed Mar 08 2023 15:57:25 GMT+0800 (中国标准时间)'));
+        this.addAuthorization(new Date('Wed Mar 08 2023 17:29:51 GMT+0800 (中国标准时间)'));
         console.log(this.headers);
         return '111';
-        // 393fcda130d7a793a5de96ecd72871a1c8a9491a04318786e067dea440e1e4e0
+        // "AWS4-HMAC-SHA256 Credential=AKTPOTY4MTFlZTY5OTFkNDU4M2FiOWUzZGMzYjliNWU2NTY/20230308/cn-north-1/imagex/aws4_request, SignedHeaders=x-amz-date;x-amz-security-token, Signature=da92061264a823bc73719c6afab334590db5ce9362cf1c0f161e161e1b3e9ea8"
     }
 
     addAuthorization(t: any) {
@@ -117,9 +117,9 @@ export class AppService {
 
     signature(e: any, t: any) {
         const n = this.getSigningKey(e, t.substr(0, 8), 'cn-north-1', 'imagex');
-        const c = this.hashService.init(cryptoJS.algo.SHA256.create(), n);
-        console.log(c);
-        return hmac(n, this.stringToSign(t)).toString();
+        return this.hashService
+            .init(cryptoJS.algo.SHA256.create(), n)
+            .finalize(this.stringToSign(t));
     }
 
     stringToSign(e: any) {
@@ -142,7 +142,7 @@ export class AppService {
             e.push(this.u(this.params) || ''),
             e.push(''.concat(this.canonicalHeaders(), '\n')),
             e.push(this.signedHeaders()),
-            e.push(this.hexEncodedBodyHash()),
+            e.push(sha256('').toString()),
             e.join('\n')
         );
     }
