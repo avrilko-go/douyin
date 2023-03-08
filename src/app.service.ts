@@ -1,6 +1,9 @@
 import { Injectable } from '@nestjs/common';
+import cryptoJS from 'crypto-js/core';
 import hmac from 'crypto-js/hmac-sha256';
 import sha256 from 'crypto-js/sha256';
+
+import { HashService } from '@/hash.service';
 
 @Injectable()
 export class AppService {
@@ -40,6 +43,8 @@ export class AppService {
     };
 
     // "AWS4-HMAC-SHA256 Credential=AKTPZTI1NWZjNmE4NGVjNDk3NDhlNmI2NjU4MTg3MDYyOWY/20230308/cn-north-1/imagex/aws4_request, SignedHeaders=x-amz-date;x-amz-security-token, Signature=393fcda130d7a793a5de96ecd72871a1c8a9491a04318786e067dea440e1e4e0"
+
+    constructor(protected hashService: HashService) {}
 
     getHello(): string {
         this.method = 'get';
@@ -112,6 +117,8 @@ export class AppService {
 
     signature(e: any, t: any) {
         const n = this.getSigningKey(e, t.substr(0, 8), 'cn-north-1', 'imagex');
+        const c = this.hashService.init(cryptoJS.algo.SHA256.create(), n);
+        console.log(c);
         return hmac(n, this.stringToSign(t)).toString();
     }
 
