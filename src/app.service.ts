@@ -19,10 +19,7 @@ export class AppService {
         'x-amzn-trace-id',
     ];
 
-    headers = {
-        Authorization: '',
-        'X-Amz-Content-Sha256': '',
-    };
+    headers = {};
 
     params = {
         Action: 'ApplyImageUpload',
@@ -63,24 +60,23 @@ export class AppService {
             ServiceId: 'jm8ajry58r',
             app_id: 2906,
             user_id: '',
-            s: 'myakoda7lg',
+            s: 'drogcwkmdz7',
         };
         this.token = {
-            accessKeyId: 'AKTPNDlmMWRjNDMxNTcxNDgxMDk3MWFkMWVhZmExNDQ5M2U',
-            secretAccessKey: 'lRkj6fyB6oBiFbp50JmJFtInrmwrrx1m9wJl2ug8HSMHR7Ih/owR9E1DaHx5lAj8',
+            accessKeyId: 'AKTPNjFiYzA5NWM1OGZhNDllMGI3OWUxZGNiZTZlODlmMDQ',
+            secretAccessKey: 'QAqbd/d2q+6Q9RevxZsNsWD6uRKFN6RoQxB36iofKafdgaPpprWs+IFiqs0S/PZg',
             sessionToken:
-                'STS2eyJMVEFjY2Vzc0tleUlEIjoiQUtMVFlqZGpZVFV3WldRd1pEVTBORFJtTW1Fd05XVTVObUUxTVRkaVl6VXlaVGciLCJBY2Nlc3NLZXlJRCI6IkFLVFBORGxtTVdSak5ETXhOVGN4TkRneE1EazNNV0ZrTVdWaFptRXhORFE1TTJVIiwiU2lnbmVkU2VjcmV0QWNjZXNzS2V5IjoiTlRsdS9SOFc2TUlETng1b1lvalkySlZRbUkvbmdmMEh6VVJseERiUG5pNnpvbi9TdzNZWUQ3Y0JubzdKZFhDcmNIM0lnelduTzhkc25iWnd4eEFzR1k3WlF0ZG9pdjF5ZG5saGhtV3lVeEk9IiwiRXhwaXJlZFRpbWUiOjE2Nzg0NDA1OTEsIlBvbGljeVN0cmluZyI6IntcIlN0YXRlbWVudFwiOlt7XCJFZmZlY3RcIjpcIkFsbG93XCIsXCJBY3Rpb25cIjpbXCJ2b2Q6KlwiLFwiSW1hZ2VYOipcIl0sXCJSZXNvdXJjZVwiOltcIipcIl19LHtcIkVmZmVjdFwiOlwiQWxsb3dcIixcIkFjdGlvblwiOltcIlVzZXJJZFwiXSxcIlJlc291cmNlXCI6W1wiMTAyODQyNjYwMDQ3XCJdfSx7XCJFZmZlY3RcIjpcIkFsbG93XCIsXCJBY3Rpb25cIjpbXCJBcHBJZFwiXSxcIlJlc291cmNlXCI6W1wiMTEyOFwiXX0se1wiRWZmZWN0XCI6XCJBbGxvd1wiLFwiQWN0aW9uXCI6W1wiVXNlclJlZmVyZW5jZVwiXSxcIlJlc291cmNlXCI6W1wie1xcXCJwc21cXFwiOlxcXCJkb3V5aW4uY3JlYXRvci5jb250ZW50XFxcIn1cIl19LHtcIkVmZmVjdFwiOlwiQWxsb3dcIixcIkFjdGlvblwiOltcIlNlc3Npb25DaGVja1wiXSxcIlJlc291cmNlXCI6W1wiVWlkXCJdfSx7XCJFZmZlY3RcIjpcIkFsbG93XCIsXCJBY3Rpb25cIjpbXCJQU01cIl0sXCJSZXNvdXJjZVwiOltcImRvdXlpbi5jcmVhdG9yLmNvbnRlbnRcIl19XX0iLCJTaWduYXR1cmUiOiI0M2M4NTU1ODhhZTc2N2JlZDNlM2UxZTVhNjA2OWMyYzA5YjllNzUzZjliMjAxMGY3ZGNhMmE1MTM0MWI0YzJiIn0=',
+                'STS2eyJMVEFjY2Vzc0tleUlEIjoiQUtMVFlqZGpZVFV3WldRd1pEVTBORFJtTW1Fd05XVTVObUUxTVRkaVl6VXlaVGciLCJBY2Nlc3NLZXlJRCI6IkFLVFBOakZpWXpBNU5XTTFPR1poTkRsbE1HSTNPV1V4WkdOaVpUWmxPRGxtTURRIiwiU2lnbmVkU2VjcmV0QWNjZXNzS2V5IjoiZHkwS2l3TkJPUkp0Yis0d2ZETjI5SVlOK3NqMWJ4eFBKampzRXNaYndQbnVDYzFSbG1meUdudENhRDV5cTZtZERGaXFsUEdKK0xDbEFjdkJUVFpISytNVWMwWVJKMjZ3Wmw4bFV0WEluajA9IiwiRXhwaXJlZFRpbWUiOjE2Nzg0NTE0NDMsIlBvbGljeVN0cmluZyI6IntcIlN0YXRlbWVudFwiOlt7XCJFZmZlY3RcIjpcIkFsbG93XCIsXCJBY3Rpb25cIjpbXCJ2b2Q6KlwiLFwiSW1hZ2VYOipcIl0sXCJSZXNvdXJjZVwiOltcIipcIl19LHtcIkVmZmVjdFwiOlwiQWxsb3dcIixcIkFjdGlvblwiOltcIlVzZXJJZFwiXSxcIlJlc291cmNlXCI6W1wiMTAyODQyNjYwMDQ3XCJdfSx7XCJFZmZlY3RcIjpcIkFsbG93XCIsXCJBY3Rpb25cIjpbXCJBcHBJZFwiXSxcIlJlc291cmNlXCI6W1wiMTEyOFwiXX0se1wiRWZmZWN0XCI6XCJBbGxvd1wiLFwiQWN0aW9uXCI6W1wiVXNlclJlZmVyZW5jZVwiXSxcIlJlc291cmNlXCI6W1wie1xcXCJwc21cXFwiOlxcXCJkb3V5aW4uY3JlYXRvci5jb250ZW50XFxcIn1cIl19LHtcIkVmZmVjdFwiOlwiQWxsb3dcIixcIkFjdGlvblwiOltcIlNlc3Npb25DaGVja1wiXSxcIlJlc291cmNlXCI6W1wiVWlkXCJdfSx7XCJFZmZlY3RcIjpcIkFsbG93XCIsXCJBY3Rpb25cIjpbXCJQU01cIl0sXCJSZXNvdXJjZVwiOltcImRvdXlpbi5jcmVhdG9yLmNvbnRlbnRcIl19XX0iLCJTaWduYXR1cmUiOiI4MzcxOGQ3YTUwYmE1YTExOGU2MWE1MTAxMDJkZGJjNTNiYjAyYzc3MmZkYzZkYzcyNTliMjNjNjNiNDg2NzllIn0=',
         };
 
-        this.addAuthorization(new Date('Wed Mar 08 2023 17:29:51 GMT+0800 (中国标准时间)'));
-        console.log(this.headers);
+        this.addAuthorization(new Date('Wed Mar 08 2023 20:30:43 GMT+0800 (中国标准时间)'));
         return '111';
-        // "AWS4-HMAC-SHA256 Credential=AKTPOTY4MTFlZTY5OTFkNDU4M2FiOWUzZGMzYjliNWU2NTY/20230308/cn-north-1/imagex/aws4_request, SignedHeaders=x-amz-date;x-amz-security-token, Signature=da92061264a823bc73719c6afab334590db5ce9362cf1c0f161e161e1b3e9ea8"
     }
 
     addAuthorization(t: any) {
         const n = this.iso8601(t).replace(/[:-]|\.\d{3}/g, '');
         this.addHeaders(this.token, n);
+        // @ts-ignore
         this.headers.Authorization = this.authorization(this.token, n);
     }
 
@@ -96,7 +92,8 @@ export class AppService {
         // @ts-ignore
         e.sessionToken && (this.headers['x-amz-security-token'] = e.sessionToken);
         // @ts-ignore
-        if (this.body) {
+        console.log(JSON.stringify(this.body));
+        if (JSON.stringify(this.body) !== '{}') {
             // @ts-ignore
             this.headers['X-Amz-Content-Sha256'] = sha256(JSON.stringify(this.body)).toString();
         }
@@ -149,8 +146,10 @@ export class AppService {
 
     hexEncodedBodyHash() {
         // eslint-disable-next-line no-nested-ternary
+        // @ts-ignore
         return this.headers['X-Amz-Content-Sha256']
-            ? this.headers['X-Amz-Content-Sha256']
+            ? // @ts-ignore
+              this.headers['X-Amz-Content-Sha256']
             : this.body
             ? sha256(this.u(this.body))
             : sha256('');
@@ -207,6 +206,7 @@ export class AppService {
         Object.keys(this.headers).forEach(function (n) {
             // @ts-ignore
             t.push([n, e.headers[n]]);
+            console.log();
         }),
             t.sort(function (ee: any, tt: any) {
                 return ee[0].toLowerCase() < tt[0].toLowerCase() ? -1 : 1;
