@@ -3,10 +3,11 @@ import cryptoJS from 'crypto-js/core';
 import hmac from 'crypto-js/hmac-sha256';
 import sha256 from 'crypto-js/sha256';
 
-import { HashService } from '@/hash.service';
+import { DouYinDto } from '@/modules/dtos';
+import { HashService } from '@/modules/hash/services/hash.service';
 
 @Injectable()
-export class AppService {
+export class DouyinService {
     method = 'get';
 
     auth = [
@@ -22,29 +23,28 @@ export class AppService {
     headers = {};
 
     params = {
-        Action: 'ApplyImageUpload',
+        Action: 'CommitImageUpload',
         Version: '2018-08-01',
         ServiceId: 'jm8ajry58r',
-        app_id: 2906,
-        user_id: '',
-        s: 'plvu10aphdm',
+        SessionKey:
+            'eyJhY2NvdW50VHlwZSI6IkltYWdlWCIsImFwcElkIjoiIiwiYml6VHlwZSI6IiIsImZpbGVUeXBlIjoiaW1hZ2UiLCJsZWdhbCI6IiIsInN0b3JlSW5mb3MiOiJbe1wiU3RvcmVVcmlcIjpcInRvcy1jbi1pLWptOGFqcnk1OHIvNTMwYmRlZmU4NzJhNDkzM2E0ZTI3ZDI5YzEzM2NiZWZcIixcIkF1dGhcIjpcIlNwYWNlS2V5L2ptOGFqcnk1OHIvMS86bTkzcnJPaFRQZW1EVUxRejM5N1ZnUTFpOU5sNGxqY1c1NmdVd0JSTU10WT06WkdWaFpHeHBibVU2SURFMk56Z3pOamcwTVRVPTpOVE13WW1SbFptVTROekpoTkRrek0yRTBaVEkzWkRJNVl6RXpNMk5pWldZPVwiLFwiVXBsb2FkSURcIjpcIjE3MTE1NjkwYjg5OTRkMzI4ZDJkM2I0YWY1MWE3YWJlXCJ9XSIsInVwbG9hZEhvc3QiOiJ0b3MtaGwteC5zbnNzZGsuY29tIiwidXJpIjoidG9zLWNuLWktam04YWpyeTU4ci81MzBiZGVmZTg3MmE0OTMzYTRlMjdkMjljMTMzY2JlZiIsInVzZXJJZCI6IiJ9',
     };
 
     body = {};
 
     token = {
-        accessKeyId: 'AKTPZTI1NWZjNmE4NGVjNDk3NDhlNmI2NjU4MTg3MDYyOWY',
-        secretAccessKey: 'cJ7WUV0HMXPUmQTFguOtZahwxDn5VAnQ9s0AtWJYrRLgFVUunpvLXEY/7t6rw2bS',
+        accessKeyId: 'AKTPM2ZiYWFjNWNiZWVjNDRkNDlmMTgwMTU3Zjg0YWRkMjU',
+        secretAccessKey: 'lyk7/xd1CztnSYHkf8FF+zOvICOsILtuoeSnFoCZivOChtECep++OIFb+g0EvHhk',
         sessionToken:
-            'STS2eyJMVEFjY2Vzc0tleUlEIjoiQUtMVFlqZGpZVFV3WldRd1pEVTBORFJtTW1Fd05XVTVObUUxTVRkaVl6VXlaVGciLCJBY2Nlc3NLZXlJRCI6IkFLVFBaVEkxTldaak5tRTROR1ZqTkRrM05EaGxObUkyTmpVNE1UZzNNRFl5T1dZIiwiU2lnbmVkU2VjcmV0QWNjZXNzS2V5IjoiY1ZVSHc2eUZHRjZOeFlwRGZNcVVLVjY3ZzI2eHppRm9HWWxHY1pHYUhTMUNtaGg1UnJwYXo3ZDc4ajdwWklaQXhzS2VhUnZOUzRLZXdoTThNOFhpbFFtUmFoWldVQzNZdEE4cS92cXZMNWs9IiwiRXhwaXJlZFRpbWUiOjE2Nzg0MzMwMTMsIlBvbGljeVN0cmluZyI6IntcIlN0YXRlbWVudFwiOlt7XCJFZmZlY3RcIjpcIkFsbG93XCIsXCJBY3Rpb25cIjpbXCJ2b2Q6KlwiLFwiSW1hZ2VYOipcIl0sXCJSZXNvdXJjZVwiOltcIipcIl19LHtcIkVmZmVjdFwiOlwiQWxsb3dcIixcIkFjdGlvblwiOltcIlVzZXJJZFwiXSxcIlJlc291cmNlXCI6W1wiMTAyODQyNjYwMDQ3XCJdfSx7XCJFZmZlY3RcIjpcIkFsbG93XCIsXCJBY3Rpb25cIjpbXCJBcHBJZFwiXSxcIlJlc291cmNlXCI6W1wiMTEyOFwiXX0se1wiRWZmZWN0XCI6XCJBbGxvd1wiLFwiQWN0aW9uXCI6W1wiVXNlclJlZmVyZW5jZVwiXSxcIlJlc291cmNlXCI6W1wie1xcXCJwc21cXFwiOlxcXCJkb3V5aW4uY3JlYXRvci5jb250ZW50XFxcIn1cIl19LHtcIkVmZmVjdFwiOlwiQWxsb3dcIixcIkFjdGlvblwiOltcIlNlc3Npb25DaGVja1wiXSxcIlJlc291cmNlXCI6W1wiVWlkXCJdfSx7XCJFZmZlY3RcIjpcIkFsbG93XCIsXCJBY3Rpb25cIjpbXCJQU01cIl0sXCJSZXNvdXJjZVwiOltcImRvdXlpbi5jcmVhdG9yLmNvbnRlbnRcIl19XX0iLCJTaWduYXR1cmUiOiJhYjI3M2U1OGNlMDJjYzUyMjZmNGQ5NDNkMzMyNTFhM2Y5YTBmNzQ0NjlmZmU5NTliZTFmNjk0NGI5OWFjNDAwIn0=',
+            'STS2eyJMVEFjY2Vzc0tleUlEIjoiQUtMVFlqZGpZVFV3WldRd1pEVTBORFJtTW1Fd05XVTVObUUxTVRkaVl6VXlaVGciLCJBY2Nlc3NLZXlJRCI6IkFLVFBNMlppWVdGak5XTmlaV1ZqTkRSa05EbG1NVGd3TVRVM1pqZzBZV1JrTWpVIiwiU2lnbmVkU2VjcmV0QWNjZXNzS2V5IjoiRFgzbWJWY2c3T0F1U08vb2trRzI2WFJsTGpudm5jbFdmZG1FU1M2Rno1bXJiVGR0RnYwT2E4Qkl0NXhRNWZMckZ6dHFDODNQSE5LWXRuaHh5eWE5N1NpZU5uTFFXU2VlV3E2Q0pvdDRXbDA9IiwiRXhwaXJlZFRpbWUiOjE2Nzg1MTk2MTUsIlBvbGljeVN0cmluZyI6IntcIlN0YXRlbWVudFwiOlt7XCJFZmZlY3RcIjpcIkFsbG93XCIsXCJBY3Rpb25cIjpbXCJ2b2Q6KlwiLFwiSW1hZ2VYOipcIl0sXCJSZXNvdXJjZVwiOltcIipcIl19LHtcIkVmZmVjdFwiOlwiQWxsb3dcIixcIkFjdGlvblwiOltcIlVzZXJJZFwiXSxcIlJlc291cmNlXCI6W1wiMTAyODQyNjYwMDQ3XCJdfSx7XCJFZmZlY3RcIjpcIkFsbG93XCIsXCJBY3Rpb25cIjpbXCJBcHBJZFwiXSxcIlJlc291cmNlXCI6W1wiMTEyOFwiXX0se1wiRWZmZWN0XCI6XCJBbGxvd1wiLFwiQWN0aW9uXCI6W1wiVXNlclJlZmVyZW5jZVwiXSxcIlJlc291cmNlXCI6W1wie1xcXCJwc21cXFwiOlxcXCJkb3V5aW4uY3JlYXRvci5jb250ZW50XFxcIn1cIl19LHtcIkVmZmVjdFwiOlwiQWxsb3dcIixcIkFjdGlvblwiOltcIlNlc3Npb25DaGVja1wiXSxcIlJlc291cmNlXCI6W1wiVWlkXCJdfSx7XCJFZmZlY3RcIjpcIkFsbG93XCIsXCJBY3Rpb25cIjpbXCJQU01cIl0sXCJSZXNvdXJjZVwiOltcImRvdXlpbi5jcmVhdG9yLmNvbnRlbnRcIl19XX0iLCJTaWduYXR1cmUiOiIzZWEzOTVlNzRhYmU2NzNhYzAzOWRjYjc0NjQwOWYzOWIyYzk0OTMxOTAxYjYyMDE4ZThhMjJlZGNhNGJlNGRkIn0=',
     };
 
     // "AWS4-HMAC-SHA256 Credential=AKTPZTI1NWZjNmE4NGVjNDk3NDhlNmI2NjU4MTg3MDYyOWY/20230308/cn-north-1/imagex/aws4_request, SignedHeaders=x-amz-date;x-amz-security-token, Signature=393fcda130d7a793a5de96ecd72871a1c8a9491a04318786e067dea440e1e4e0"
 
     constructor(protected hashService: HashService) {}
 
-    getHello(): string {
-        this.method = 'get';
+    computeHash(data: DouYinDto): string {
+        this.method = data.method;
         this.auth = [
             'authorization',
             'content-type',
@@ -54,22 +54,9 @@ export class AppService {
             'expect',
             'x-amzn-trace-id',
         ];
-        this.params = {
-            Action: 'ApplyImageUpload',
-            Version: '2018-08-01',
-            ServiceId: 'jm8ajry58r',
-            app_id: 2906,
-            user_id: '',
-            s: 'ky2idvie978',
-        };
-        this.token = {
-            accessKeyId: 'AKTPMzdjMGIwMzhiOWJmNGQ5YmIwMzRkMTExNzhkM2VhZDY',
-            secretAccessKey: '/oVy3uD+RG8huR+8Sr+Y4erPS5FhVVF5BQuF0AYqiNHoOosuR1Tlz76kDCQQdJDb',
-            sessionToken:
-                'STS2eyJMVEFjY2Vzc0tleUlEIjoiQUtMVFlqZGpZVFV3WldRd1pEVTBORFJtTW1Fd05XVTVObUUxTVRkaVl6VXlaVGciLCJBY2Nlc3NLZXlJRCI6IkFLVFBNemRqTUdJd016aGlPV0ptTkdRNVltSXdNelJrTVRFeE56aGtNMlZoWkRZIiwiU2lnbmVkU2VjcmV0QWNjZXNzS2V5IjoiaUNMY3pkK2ZSM2RiTDYweGZOckl6VVorSnY2ZG9iRWdEc0RFNWJOejdER2pWQy9OWDNHejIvQlVtSlhabndQUFkzR2J0SFRVRTI4NjBJYXVUam5IcWdqUnZ0TDBqaXFzaStYcHFtR2NjRkE9IiwiRXhwaXJlZFRpbWUiOjE2Nzg0NjA4NTAsIlBvbGljeVN0cmluZyI6IntcIlN0YXRlbWVudFwiOlt7XCJFZmZlY3RcIjpcIkFsbG93XCIsXCJBY3Rpb25cIjpbXCJ2b2Q6KlwiLFwiSW1hZ2VYOipcIl0sXCJSZXNvdXJjZVwiOltcIipcIl19LHtcIkVmZmVjdFwiOlwiQWxsb3dcIixcIkFjdGlvblwiOltcIlVzZXJJZFwiXSxcIlJlc291cmNlXCI6W1wiMTAyODQyNjYwMDQ3XCJdfSx7XCJFZmZlY3RcIjpcIkFsbG93XCIsXCJBY3Rpb25cIjpbXCJBcHBJZFwiXSxcIlJlc291cmNlXCI6W1wiMTEyOFwiXX0se1wiRWZmZWN0XCI6XCJBbGxvd1wiLFwiQWN0aW9uXCI6W1wiVXNlclJlZmVyZW5jZVwiXSxcIlJlc291cmNlXCI6W1wie1xcXCJwc21cXFwiOlxcXCJkb3V5aW4uY3JlYXRvci5jb250ZW50XFxcIn1cIl19LHtcIkVmZmVjdFwiOlwiQWxsb3dcIixcIkFjdGlvblwiOltcIlNlc3Npb25DaGVja1wiXSxcIlJlc291cmNlXCI6W1wiVWlkXCJdfSx7XCJFZmZlY3RcIjpcIkFsbG93XCIsXCJBY3Rpb25cIjpbXCJQU01cIl0sXCJSZXNvdXJjZVwiOltcImRvdXlpbi5jcmVhdG9yLmNvbnRlbnRcIl19XX0iLCJTaWduYXR1cmUiOiIwYTI5ODg1ZmVlYmViY2EyNzE3NGJlNDFkMzYxMmNhOTljNmE1NGJkN2VhNDllMTA4ODI0YWU3ZGExZGM0NDUyIn0=',
-        };
-
-        this.addAuthorization(new Date('Wed Mar 08 2023 23:07:30 GMT+0800 (中国标准时间)'));
+        this.params = data.params;
+        this.token = data.token;
+        this.addAuthorization(new Date());
         return JSON.stringify({
             header: this.headers,
             params: this.params,
